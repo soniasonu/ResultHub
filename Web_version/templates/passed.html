@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passed Students</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+        h1 { color: #333; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #4CAF50; color: white; }
+        a { color: #4CAF50; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>✅ Passed Students</h1>
+
+    {% if students %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Marks</th>
+        </tr>
+        {% for name, mark in students.items() %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ mark }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No students have passed yet!</p>
+    {% endif %}
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+</html>
